@@ -7,15 +7,10 @@ namespace Books.Data
     {
         public DbSet<BookModel> Books { get; set; }
         public DbSet<AuthorModel> Authors { get; set; }
-        public DataContext()
-        {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
-        }
-
-        //public DataContext(DbContextOptions<DataContext> options)
-        //: base(options)
+        //public DataContext()
         //{
+        //    Database.EnsureDeleted();
+        //    Database.EnsureCreated();
         //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,16 +23,4 @@ namespace Books.Data
             context.SaveChanges();
         }
     }
-
-    //public class DataContext 
-    //{
-    //    public List<BookModel> Books { get; set; }
-    //    public List<AuthorModel> Authors { get; set; }
-
-    //    public DataContext()
-    //    {
-    //        Books = new List<BookModel>();
-    //        Authors = new List<AuthorModel>();
-    //    }
-    //}
 }
